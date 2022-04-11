@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.1095" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_sad.xml" value="0.1255" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layout/fragment_favourite_recipes.xml" value="0.23802083333333332" />
