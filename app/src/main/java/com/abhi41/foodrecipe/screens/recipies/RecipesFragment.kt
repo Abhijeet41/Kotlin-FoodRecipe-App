@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.R
@@ -25,6 +27,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
     private val TAG = "RecipesFragment"
+    private val args by navArgs<RecipesFragmentArgs>()
 
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
@@ -54,8 +57,14 @@ class RecipesFragment : Fragment() {
         // requestApiData() we have to remove this because now read data from database
         readDataBase() //now retrive data from database instead from network
         observers()
-
+        clickListeners()
         return binding.root;
+    }
+
+    private fun clickListeners() {
+        binding.fabRecipes.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet2)
+        }
     }
 
 
@@ -78,7 +87,8 @@ class RecipesFragment : Fragment() {
             //IMP : we replace observe with observeOnce because  we need to observe this once only
             mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
 
-                if (database.isNotEmpty()) {
+                //checking if database is null and is not navigate from bottomsheet
+                if (database.isNotEmpty() && !args.backFromBottomSheet) {
                     Log.d(TAG, "readDataBase: called")
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
@@ -92,7 +102,7 @@ class RecipesFragment : Fragment() {
 
 
     private fun observers() {
-        mainViewModel.recipiesResponse.observe(viewLifecycleOwner) { response ->
+        mainViewModel.recipiesResponse.observeOnce(viewLifecycleOwner) { response ->
 
             when (response) {
                 is NetworkResult.Success -> {

@@ -5,4 +5,16 @@
     <string name="recipies_fragment">Recipies</string>
     <string name="favourites_recipies_fragment">Favourites</string>
     <string name="food_joke">Joke</string>
+    <string name="meal_type">Meal Type</string>
+    <string name="main_course">Main Course</string>
+    <string name="side_dish">Side Dish</string>
+    <string name="gluten_free">Gluten Free</string>
+    <string name="ketogenic">Ketogenic</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="vegan">Vegan</string>
+    <string name="pescetarian">Pescetarian</string>
+    <string name="paleo">Paleo</string>
+    <string name="primal">Primal</string>
+    <string name="whole30">Whole30</string>
+    <string name="low_fodmap">Low FODMAP</string>
 </resources>
