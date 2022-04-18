@@ -188,6 +188,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/NetworkResult.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/color/chip_bg_color.xml">
           <value>
             <set />
