@@ -102,7 +102,7 @@ class RecipesFragment : Fragment() {
 
 
     private fun observers() {
-        mainViewModel.recipiesResponse.observeOnce(viewLifecycleOwner) { response ->
+        mainViewModel.recipiesResponse.observe(viewLifecycleOwner) { response ->
 
             when (response) {
                 is NetworkResult.Success -> {
