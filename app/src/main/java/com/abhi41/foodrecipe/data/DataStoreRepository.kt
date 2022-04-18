@@ -8,6 +8,7 @@ import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_DIET_TYPE
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_MEAL_TYPE
 import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCES_DIET_TYPE
 import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCES_MEAL_TYPE
+import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCE_BACK_ONLINE
 import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCE_DIET_TYPE_ID
 import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCE_MEAL_TYPE_ID
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -29,6 +30,7 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
         val selectedMealTypeId = preferencesKey<Int>(PREFERENCE_MEAL_TYPE_ID)
         val selectedDietType = preferencesKey<String>(PREFERENCES_DIET_TYPE)
         val selectedDietTypeId = preferencesKey<Int>(PREFERENCE_DIET_TYPE_ID)
+        val backOnline = preferencesKey<Boolean>(PREFERENCE_BACK_ONLINE)
     }
 
     //create data source
@@ -72,6 +74,25 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
                 selectedDietType,
                 selectedDietTypeId
             )
+        }
+
+    //save back online status in datastore preference
+    suspend fun saveBackOnline(backOnline: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[PreferenceKeys.backOnline] = backOnline
+        }
+    }
+
+    val readBackOnline: Flow<Boolean> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }.map { preferences ->
+            val backOnline = preferences[PreferenceKeys.backOnline] ?: false
+            backOnline
         }
 
 }

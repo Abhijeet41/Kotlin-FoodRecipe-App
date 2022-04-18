@@ -17,10 +17,12 @@ import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.RecipesAdapter
 import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
 import com.abhi41.foodrecipe.utils.Constants
+import com.abhi41.foodrecipe.utils.NetworkListener
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.observeOnce
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_recipes.view.*
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -33,8 +35,10 @@ class RecipesFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var mainViewModel: MainViewModel
     private lateinit var recipeViewModel: RecipesViewModel
-  // private lateinit var mView: View
+
+    // private lateinit var mView: View
     private val mAdapter by lazy { RecipesAdapter() }
+    private lateinit var networkListener: NetworkListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,21 +53,39 @@ class RecipesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-      //  mView = inflater.inflate(R.layout.fragment_recipes, container, false)
+        //  mView = inflater.inflate(R.layout.fragment_recipes, container, false)
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this //we use this because we use live data objects
         binding.mainViewModel = mainViewModel
         setupRecyclerview()
         // requestApiData() we have to remove this because now read data from database
-        readDataBase() //now retrive data from database instead from network
+
         observers()
         clickListeners()
+
+        lifecycleScope.launch {
+            networkListener = NetworkListener()
+            networkListener.checkNetworkAvailability(requireContext())
+                .collect { status ->
+                    Log.d(TAG, "networkListener: ${status.toString()}")
+                    recipeViewModel.networkStatus = status
+                    recipeViewModel.showNetworkStatus()
+
+                    readDataBase() //now retrieve data from database instead from network
+                }
+        }
+
         return binding.root;
     }
 
     private fun clickListeners() {
         binding.fabRecipes.setOnClickListener {
-            findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet2)
+            if (recipeViewModel.networkStatus) {
+                findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet2)
+            } else {
+                recipeViewModel.showNetworkStatus()
+            }
+
         }
     }
 
@@ -125,6 +147,9 @@ class RecipesFragment : Fragment() {
             }
 
         }
+        recipeViewModel.readBackOnline.observe(viewLifecycleOwner, {
+            recipeViewModel.backOnline = it
+        })
     }
 
     fun loadDataFromCache() {
