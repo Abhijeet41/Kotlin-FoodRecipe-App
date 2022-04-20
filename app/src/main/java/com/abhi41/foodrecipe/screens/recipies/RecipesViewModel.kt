@@ -45,7 +45,7 @@ class RecipesViewModel @Inject constructor(
             dataStoreRepository.saveBackOnline(backOnline)
         }
     }
-
+    //DashBoard List of Recipes Queries
     fun applyQueries(): HashMap<String, String> {
         val queries: HashMap<String, String> = HashMap()
 
@@ -65,6 +65,20 @@ class RecipesViewModel @Inject constructor(
 
         return queries
     }
+
+    //search quries
+    fun applySearchQuery(searchQuery: String): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+        queries[Constants.QUERY_SEARCH] = searchQuery
+        queries[Constants.QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
+        queries[Constants.QUERY_API_KEY] = Constants.API_KEY
+        queries[Constants.QUERY_ADD_RECIPE_INFO] = "true"
+        queries[Constants.QUERY_FILL_INGREDIENTS] = "true"
+
+        return queries
+    }
+
+
     //in java
 /*    private HashMap<String, String> applyQueries() {
         HashMap<String,String> quries = new HashMap<String,String>;
@@ -77,7 +91,7 @@ class RecipesViewModel @Inject constructor(
             Toast.makeText(getApplication(), "No Internet Connection", Toast.LENGTH_SHORT).show()
             saveBackOnline(true)
         } else if (networkStatus) {
-            if (backOnline){
+            if (backOnline) {
                 Toast.makeText(getApplication(), "We are back online.", Toast.LENGTH_SHORT).show()
                 saveBackOnline(false)
             }

@@ -2,17 +2,13 @@ package com.abhi41.foodrecipe.screens.recipies.bottomsheet
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.abhi41.foodrecipe.R
-import com.abhi41.foodrecipe.screens.recipies.RecipesFragmentArgs
 import com.abhi41.foodrecipe.screens.recipies.RecipesViewModel
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_DIET_TYPE
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_MEAL_TYPE

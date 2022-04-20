@@ -14,6 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import retrofit2.http.Query
 import java.lang.Exception
 import javax.inject.Inject
 
@@ -38,9 +39,18 @@ class MainViewModel @Inject constructor(
     /**  RETROFIT */
     var recipiesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
 
+    //search recipes response
+    var searchedRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
+
+
     fun getRecipes(quries: Map<String, String>) = viewModelScope.launch {
         getRecipesSafeCall(quries)
     }
+
+    fun searchRecipes(searchQuery: Map<String, String>) = viewModelScope.launch {
+        searchRecipesSafeCall(searchQuery)
+    }
+
 
     private suspend fun getRecipesSafeCall(quries: Map<String, String>) {
 
@@ -62,6 +72,22 @@ class MainViewModel @Inject constructor(
             }
         } else {
             recipiesResponse.value = NetworkResult.Error("No Internet Connection")
+        }
+    }
+
+    private suspend fun searchRecipesSafeCall(searchQuery: Map<String, String>) {
+        searchedRecipesResponse.value = NetworkResult.Loading()
+
+        if (CheckConnection.hasInternetConnection(application = getApplication<Application>())) {
+            try {
+                val response = repository.remote.searchRecipes(quries = searchQuery)
+                searchedRecipesResponse.value = handleFoodRecipesResponse(response)
+                //note we don't need caching here
+            } catch (e: Exception) {
+                searchedRecipesResponse.value = NetworkResult.Error("Recipes not found")
+            }
+        }else {
+            searchedRecipesResponse.value = NetworkResult.Error("No Internet Connection")
         }
     }
 

@@ -2,11 +2,10 @@ package com.abhi41.foodrecipe.screens.recipies
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -16,7 +15,6 @@ import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.RecipesAdapter
 import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
-import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.NetworkListener
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.observeOnce
@@ -27,7 +25,7 @@ import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
-class RecipesFragment : Fragment() {
+class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     private val TAG = "RecipesFragment"
     private val args by navArgs<RecipesFragmentArgs>()
 
@@ -57,6 +55,8 @@ class RecipesFragment : Fragment() {
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this //we use this because we use live data objects
         binding.mainViewModel = mainViewModel
+
+        setHasOptionsMenu(true)
         setupRecyclerview()
         // requestApiData() we have to remove this because now read data from database
 
@@ -100,6 +100,11 @@ class RecipesFragment : Fragment() {
     private fun requestApiData() {
         Log.d(TAG, "requestApiData: called")
         mainViewModel.getRecipes(recipeViewModel.applyQueries())
+    }
+
+    private fun searchApiData(searchQuery: String) {
+        showShimmerEffect()
+        mainViewModel.searchRecipes(recipeViewModel.applySearchQuery(searchQuery))
     }
 
     private fun readDataBase() {
@@ -147,10 +152,40 @@ class RecipesFragment : Fragment() {
             }
 
         }
-        recipeViewModel.readBackOnline.observe(viewLifecycleOwner, {
+        recipeViewModel.readBackOnline.observe(viewLifecycleOwner) {
             recipeViewModel.backOnline = it
-        })
+        }
+
+        //observe search api
+        mainViewModel.searchedRecipesResponse.observe(viewLifecycleOwner) { response ->
+
+            when (response) {
+                is NetworkResult.Success -> {
+                    hideShimmerEffect()
+                    val foodRecipe = response.data
+                    foodRecipe?.let {
+                        mAdapter.setData(it)
+                    }
+                }
+
+                is NetworkResult.Error -> {
+                    hideShimmerEffect()
+                    loadDataFromCache()
+                    Toast.makeText(
+                        requireContext(),
+                        response.message.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                is NetworkResult.Loading -> {
+                    showShimmerEffect()
+                }
+            }
+
+        }
     }
+
 
     fun loadDataFromCache() {
         //our mainViewModel.readRecipes is not a suspend fun hence we need to run at background thread
@@ -178,5 +213,25 @@ class RecipesFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null // this to avoid memory leaks
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.recipes_menu, menu)
+
+        val search = menu.findItem(R.id.menu_search)
+        val searchView = search.actionView as? SearchView
+        searchView?.isSubmitButtonEnabled = true
+        searchView?.setOnQueryTextListener(this)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if (query != null){
+            searchApiData(query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        return true
     }
 }
