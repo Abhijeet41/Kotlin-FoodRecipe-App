@@ -42,7 +42,7 @@ android {
             force("org.antlr:antlr4-tool:4.7.1")
         }
     }
-    sourceSets {
+   /* sourceSets {
         main {
             res.srcDirs = [
                     file("src/main/res/layouts/").listFiles(),
@@ -50,7 +50,7 @@ android {
                     "src/main/res"
             ]
         }
-    }
+    }*/
 
 }
 
