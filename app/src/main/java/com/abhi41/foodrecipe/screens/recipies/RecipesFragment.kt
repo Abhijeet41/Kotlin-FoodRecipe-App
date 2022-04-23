@@ -135,6 +135,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                 is NetworkResult.Success -> {
                     hideShimmerEffect()
                     response.data?.let { mAdapter.setData(it) }
+
                 }
                 is NetworkResult.Error -> {
                     hideShimmerEffect()

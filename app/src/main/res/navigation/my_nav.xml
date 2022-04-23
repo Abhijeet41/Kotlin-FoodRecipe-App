@@ -11,13 +11,16 @@
         android:label="Recipies"
         tools:layout="@layout/fragment_recipes">
 
-
         <action
             android:id="@+id/action_recipesFragment_to_recipesBottomSheet2"
             app:destination="@id/recipesBottomSheet2" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
         <argument
             android:name="backFromBottomSheet"
             android:defaultValue="false" />
+
     </fragment>
     <fragment
         android:id="@+id/favouriteRecipesFragment"
@@ -39,5 +42,14 @@
             android:id="@+id/action_recipesBottomSheet2_to_recipesFragment"
             app:destination="@id/recipesFragment" />
     </dialog>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.abhi41.foodrecipe.screens.detailScreen.DetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.abhi41.foodrecipe.model.Result" />
+    </activity>
 
 </navigation>

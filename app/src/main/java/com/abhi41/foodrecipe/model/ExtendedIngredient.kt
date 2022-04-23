@@ -1,13 +1,16 @@
 package com.abhi41.foodrecipe.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class ExtendedIngredient(
     @SerializedName("amount")
     val amount: Double,
     @SerializedName("consistency")
-    val consistency: String,
+    val consistency: String?,
     @SerializedName("image")
     val image: String,
     @SerializedName("name")
@@ -16,4 +19,4 @@ data class ExtendedIngredient(
     val original: String,
     @SerializedName("unit")
     val unit: String
-)
+):Parcelable

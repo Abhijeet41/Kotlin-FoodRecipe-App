@@ -3,9 +3,11 @@ package com.abhi41.foodrecipe.utils
 import androidx.recyclerview.widget.DiffUtil
 import com.abhi41.foodrecipe.model.Result
 
-class RecipesDiffUtils(
-    private val oldRecipeList: List<Result>,
-    private val newRecipeList: List<Result>
+class RecipesDiffUtils<T>(
+    //we replace Result model with generic T
+    // because we use diffutil in Ingredients Adapter as well with different model class like Extendedgredient
+    private val oldRecipeList: List<T>,
+    private val newRecipeList: List<T>
 ) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldRecipeList.size
