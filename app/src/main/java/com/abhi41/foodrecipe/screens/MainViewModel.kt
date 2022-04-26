@@ -5,8 +5,9 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
-import com.abhi41.foodrecipe.RecipesEntity
+import com.abhi41.foodrecipe.data.database.entities.RecipesEntity
 import com.abhi41.foodrecipe.data.Repository
+import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity
 import com.abhi41.foodrecipe.model.FoodRecipe
 import com.abhi41.foodrecipe.utils.CheckConnection
 import com.abhi41.foodrecipe.utils.NetworkResult
@@ -14,7 +15,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import retrofit2.http.Query
 import java.lang.Exception
 import javax.inject.Inject
 
@@ -28,13 +28,32 @@ class MainViewModel @Inject constructor(
 
     /**  ROOM DATABASE */
 
-    //we get data from flow so convert it live data we used .asLiveData()
-    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readDatabase().asLiveData()
+    //we get data from flow so convert it in live data we used .asLiveData()
+    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
+    val readFavoriteRecipes: LiveData<List<FavoriteEntity>> =
+        repository.local.readFavoriteRecipes().asLiveData()
 
     private fun insertRecipes(recipesEntity: RecipesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertRecipes(recipesEntity)
         }
+
+    /* --------------- functions for add favorite recipes ------------- */
+    fun insertFavoriteRecipe(favoriteEntity: FavoriteEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.local.insertFavoriteRecipes(favoriteEntity)
+        }
+
+    fun deleteFavoriteRecipe(favoriteEntity: FavoriteEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.local.deleteFavoriteRecipe(favoriteEntity)
+        }
+
+    fun deleteAllFavoriteRecipes() =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.local.deleteAllFavoriteRecipes()
+        }
+
 
     /**  RETROFIT */
     var recipiesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
@@ -86,7 +105,7 @@ class MainViewModel @Inject constructor(
             } catch (e: Exception) {
                 searchedRecipesResponse.value = NetworkResult.Error("Recipes not found")
             }
-        }else {
+        } else {
             searchedRecipesResponse.value = NetworkResult.Error("No Internet Connection")
         }
     }

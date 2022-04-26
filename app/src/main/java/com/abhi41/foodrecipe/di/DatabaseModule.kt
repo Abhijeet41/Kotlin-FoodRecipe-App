@@ -24,7 +24,7 @@ object DatabaseModule {
         context,
         RecipesDatabase::class.java,
         DATABASE_NAME
-    ).build()
+    ).fallbackToDestructiveMigration().build()
 
     @Singleton
     @Provides
