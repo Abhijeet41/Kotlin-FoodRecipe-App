@@ -25,6 +25,8 @@
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/activities/layout/fragment_over_view.xml" value="0.2" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/activities/layout/ingredients_row_layout.xml" value="0.43209876543209874" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/activities/menu/details_menu.xml" value="0.1929084001688476" />
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/activities/menu/favorite_contextual_menu.xml" value="0.195382642154767" />
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/activities/menu/favorite_recipes_menu.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/adapters/layout/placeholder_row_layout.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/adapters/layout/recipes_row_layout.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_favourite_recipes.xml" value="0.25" />
