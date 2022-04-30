@@ -18,3 +18,11 @@ fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observ
         }
     })
 }
+
+fun <T> LiveData<T>.removeObserverEx(lifecycleOwner: LifecycleOwner) {
+    observe(lifecycleOwner, object : Observer<T> {
+        override fun onChanged(t: T?) {
+            removeObserver(this)
+        }
+    })
+}

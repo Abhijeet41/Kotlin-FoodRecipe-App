@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
 import com.abhi41.foodrecipe.utils.NetworkListener
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.observeOnce
+import com.abhi41.foodrecipe.utils.removeObserverEx
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_recipes.view.*
 import kotlinx.coroutines.flow.collect
@@ -31,7 +33,8 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
-    private lateinit var mainViewModel: MainViewModel
+   // private lateinit var mainViewModel: MainViewModel
+    private val mainViewModel by viewModels<MainViewModel>()
     private lateinit var recipeViewModel: RecipesViewModel
 
     // private lateinit var mView: View
@@ -42,7 +45,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onCreate(savedInstanceState)
 
         //initialize view model
-        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        //mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         recipeViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
 
@@ -63,19 +66,26 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         observers()
         clickListeners()
 
-        lifecycleScope.launch {
-            networkListener = NetworkListener()
-            networkListener.checkNetworkAvailability(requireContext())
-                .collect { status ->
-                    Log.d(TAG, "networkListener: ${status.toString()}")
-                    recipeViewModel.networkStatus = status
-                    recipeViewModel.showNetworkStatus()
-
-                    readDataBase() //now retrieve data from database instead from network
-                }
-        }
 
         return binding.root;
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (view != null){
+            lifecycleScope.launch {
+                networkListener = NetworkListener()
+                networkListener.checkNetworkAvailability(requireContext())
+                    .collect { status ->
+                        Log.d(TAG, "networkListener: ${status.toString()}")
+                        recipeViewModel.networkStatus = status
+                        recipeViewModel.showNetworkStatus()
+
+                        readDataBase() //now retrieve data from database instead from network
+                    }
+            }
+        }
+
     }
 
     private fun clickListeners() {
@@ -110,21 +120,24 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     private fun readDataBase() {
         /* Our mainViewModel.readRecipes is not a suspend fun hence we need to run at background thread
         that why we use lifecycleScope */
-        lifecycleScope.launch {
-            //IMP : we replace observe with observeOnce because  we need to observe this once only
-            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
+        if (binding.root != null){
+            lifecycleScope.launch {
+                //IMP : we replace observe with observeOnce because  we need to observe this once only
+                mainViewModel.readRecipes.observeOnce(requireParentFragment().viewLifecycleOwner) { database ->
 
-                //checking if database is null and is not navigate from bottomsheet
-                if (database.isNotEmpty() && !args.backFromBottomSheet) {
-                    Log.d(TAG, "readDataBase: called")
-                    mAdapter.setData(database[0].foodRecipe)
-                    hideShimmerEffect()
-                } else {
-                    requestApiData()
+                    //checking if database is null and is not navigate from bottomsheet
+                    if (database.isNotEmpty() && !args.backFromBottomSheet) {
+                        Log.d(TAG, "readDataBase: called")
+                        mAdapter.setData(database[0].foodRecipe)
+                        hideShimmerEffect()
+                    } else {
+                        requestApiData()
+                    }
+
                 }
-
             }
         }
+
     }
 
 
@@ -212,8 +225,10 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     override fun onDestroy() {
+
         super.onDestroy()
         _binding = null // this to avoid memory leaks
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

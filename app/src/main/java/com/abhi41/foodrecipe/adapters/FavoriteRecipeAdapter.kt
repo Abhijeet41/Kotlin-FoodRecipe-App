@@ -103,7 +103,7 @@ class FavoriteRecipeAdapter(
             applyActionModeTitle() //when there is no selected item then  dismiss actionbar
         } else {
             selectedRecipes.add(currentRecipe)
-            changeRecipeStyle(holder, R.color.cardBackgroundLightColor, R.color.colorPrimary)
+            changeRecipeStyle(holder, R.color.cardBackgroundLightColor, R.color.selectedStrokeColor)
             applyActionModeTitle() //when there is no selected item then  dismiss actionbar
         }
     }
@@ -177,7 +177,7 @@ class FavoriteRecipeAdapter(
 
     private fun showSnacBar(message: String){
       //  Snackbar.make(rootView,message,Snackbar.LENGTH_SHORT).setAction("Okay"){}
-        PrintMessage.showSnackBarAction(message,requireActivity,rootView,"Okay")
+        PrintMessage.showSnackBarAction(message,rootView,"Okay")
     }
 
     fun clearContextualActionMode(){

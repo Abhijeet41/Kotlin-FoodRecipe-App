@@ -31,6 +31,7 @@
                 android:id="@+id/white_bg"
                 android:layout_width="120dp"
                 android:layout_height="0dp"
+                android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -68,7 +69,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="100"
-                android:textColor="@color/darkGray"
                 app:layout_constraintStart_toStartOf="@+id/txtIngredient"
                 app:layout_constraintTop_toBottomOf="@+id/txtIngredient" />
 
@@ -78,7 +78,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Grams"
-                android:textColor="@color/darkGray"
                 app:layout_constraintBottom_toBottomOf="@+id/txtIngredientAmount"
                 app:layout_constraintStart_toEndOf="@+id/txtIngredientAmount" />
 
@@ -89,7 +88,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"
                 android:text="Consistency"
-                android:textColor="@color/darkGray"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/txtIngredientAmount"
                 app:layout_constraintTop_toBottomOf="@+id/txtIngredientAmount" />
@@ -102,7 +101,7 @@
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="12dp"
                 android:text="Original"
-                android:textColor="@color/darkGray"
+              
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/txtIngredientConsistency"

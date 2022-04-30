@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="app_name">FoodRecipe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recipies_fragment">Recipies</string>
+    <string name="favourites_recipies_fragment">Favourites</string>
+    <string name="food_joke">Joke</string>
+    <string name="meal_type">Meal Type</string>
+    <string name="main_course">Main Course</string>
+    <string name="side_dish">Side Dish</string>
+    <string name="ketogenic">Ketogenic</string>
+    <string name="vegan">Vegan</string>
+    <string name="pescetarian">Pescetarian</string>
+    <string name="paleo">Paleo</string>
+    <string name="primal">Primal</string>
+    <string name="whole30">Whole30</string>
+    <string name="low_fodmap">Low FODMAP</string>
+    <string name="search">Search</string>
+
+    <string name="gluten_free">Gluten Free</string>
+    <string name="healthy">Healthy</string>
+    <string name="diary_free">Diary Free</string>
+    <string name="cheap">Cheap</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="error">Error</string>
+
     <string name="no_favorite_recipes">No Favorite Recipes</string>
     <string name="delete_favorite_menu">Delete Favorite Menu</string>
     <string name="delete_all">Delete All</string>
+    <string name="share">Share</string>
 </resources>

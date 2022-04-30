@@ -113,7 +113,6 @@ class DetailsActivity : AppCompatActivity() {
         changeMenuItemColor(item, R.color.yellow)
         PrintMessage.showSnackBarAction(
             "Recipe Saved",
-            applicationContext,
             detailsLayout,
             "Okay"
         )
@@ -130,7 +129,6 @@ class DetailsActivity : AppCompatActivity() {
         changeMenuItemColor(item, R.color.white)
         PrintMessage.showSnackBarAction(
             "Recipe from Favorite",
-            applicationContext,
             detailsLayout,
             "Okay"
         )

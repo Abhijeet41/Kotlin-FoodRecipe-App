@@ -70,7 +70,11 @@ class FavouriteRecipesFragment : Fragment() {
     }
 
     private fun showSnackBar() {
-        PrintMessage.showSnackBarAction("All Recipes Removed.", requireContext(), binding.root, "Okay")
+        PrintMessage.showSnackBarAction(
+            "All Recipes Removed.",
+            binding.root,
+            "Okay"
+        )
     }
 
     override fun onDestroy() {
