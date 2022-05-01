@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.223" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.1095" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_food_joke_background_dark.xml" value="0.1295" />
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.223" />
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.223" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_menu_book.xml" value="0.1455" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_sad.xml" value="0.1255" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/drawable/ic_share_24.xml" value="0.1295" />
@@ -37,12 +40,13 @@
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/adapters/layout/recipes_row_layout.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_favourite_recipes.xml" value="0.25" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_food_joke.xml" value="0.2" />
-        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_over_view.xml" value="0.2" />
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_over_view.xml" value="0.1" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_recipe_bottom_sheet.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/fragments/layout/fragment_recipes.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/layouts/layout-night/fragment_food_joke.xml" value="0.195382642154767" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23802083333333332" />
         <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/menu/recipes_menu.xml" value="0.2" />
+        <entry key="..\:/Kotlin 2022/Food Recipe Kotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.223" />
       </map>
     </option>
   </component>
