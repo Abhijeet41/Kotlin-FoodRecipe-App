@@ -1,9 +1,8 @@
 package com.abhi41.foodrecipe.di
 
 import android.content.Context
-import androidx.room.Database
 import androidx.room.Room
-import com.abhi41.foodrecipe.data.database.RecipesDatabase
+import com.abhi41.foodrecipe.data.database.database.RecipesDatabase
 import com.abhi41.foodrecipe.utils.Constants.Companion.DATABASE_NAME
 import dagger.Module
 import dagger.Provides

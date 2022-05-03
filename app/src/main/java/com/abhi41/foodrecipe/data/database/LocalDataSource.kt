@@ -1,9 +1,9 @@
 package com.abhi41.foodrecipe.data.database
 
+import com.abhi41.foodrecipe.data.database.dao.RecipesDao
 import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity
 import com.abhi41.foodrecipe.data.database.entities.FoodJokeEntity
 import com.abhi41.foodrecipe.data.database.entities.RecipesEntity
-import com.abhi41.foodrecipe.model.FoodJoke
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

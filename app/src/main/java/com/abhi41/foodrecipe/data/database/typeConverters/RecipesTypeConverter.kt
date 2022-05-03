@@ -1,4 +1,4 @@
-package com.abhi41.foodrecipe.data.database
+package com.abhi41.foodrecipe.data.database.typeConverters
 
 import androidx.room.TypeConverter
 import com.abhi41.foodrecipe.model.FoodRecipe

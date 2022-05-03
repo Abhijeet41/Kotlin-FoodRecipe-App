@@ -2,7 +2,6 @@ package com.abhi41.foodrecipe.data
 
 import com.abhi41.foodrecipe.data.database.LocalDataSource
 import com.abhi41.foodrecipe.data.network.RemoteDataSource
-import dagger.hilt.android.scopes.ActivityRetainedScoped
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 

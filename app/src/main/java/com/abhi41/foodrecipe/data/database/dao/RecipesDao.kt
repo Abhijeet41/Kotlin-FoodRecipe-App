@@ -1,4 +1,4 @@
-package com.abhi41.foodrecipe.data.database
+package com.abhi41.foodrecipe.data.database.dao
 
 import androidx.room.*
 import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity

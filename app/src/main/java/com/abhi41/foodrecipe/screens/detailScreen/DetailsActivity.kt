@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.navArgs
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.PagerAdapter
@@ -18,6 +19,7 @@ import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.PrintMessage
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -92,22 +94,24 @@ class DetailsActivity : AppCompatActivity() {
 
     //check whether recipe is added to favorite and change menu icon color
     private fun checkSavedRecipes(menuItem: MenuItem) {
-        mainViewModel.readFavoriteRecipes.observe(this) { favoriteEntity ->
-            try {
-                for (savedFavorite in favoriteEntity) {
-                    if (savedFavorite.result.recipeId == args.result.recipeId) {
-                        changeMenuItemColor(menuItem, R.color.yellow)
-                        savedRecipeId = savedFavorite.id
-                        recipeSaved = true
-                        break // every time else block gets called so white color set on saved favorite icon also
-                    } else {
-                        changeMenuItemColor(menuItem, R.color.white)
+        lifecycleScope.launch {
+            mainViewModel.readFavoriteRecipes.observe(this@DetailsActivity) { favoriteEntity ->
+                try {
+                    for (savedFavorite in favoriteEntity) {
+                        if (savedFavorite.result.recipeId == args.result.recipeId) {
+                            changeMenuItemColor(menuItem, R.color.yellow)
+                            savedRecipeId = savedFavorite.id
+                            recipeSaved = true
+                            break // every time else block gets called so white color set on saved favorite icon also
+                        } else {
+                            changeMenuItemColor(menuItem, R.color.white)
+                        }
                     }
+                } catch (e: Exception) {
+                    Log.d(TAG, e.message.toString())
                 }
-            } catch (e: Exception) {
-                Log.d(TAG, e.message.toString())
-            }
 
+            }
         }
     }
 
