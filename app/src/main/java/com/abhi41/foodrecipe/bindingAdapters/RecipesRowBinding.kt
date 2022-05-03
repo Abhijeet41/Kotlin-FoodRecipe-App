@@ -28,7 +28,8 @@ class RecipesRowBinding {
             }
         }
 
-        @BindingAdapter("setNumberOfLikes")
+/*    we don't need this function any more because we use string.valueOf()
+  @BindingAdapter("setNumberOfLikes")
         @JvmStatic //It will make our function static so we can use anywhere else in project
         fun setNumberOfLikes(textView: TextView, likes: Int) {
             textView.text = likes.toString()
@@ -39,6 +40,7 @@ class RecipesRowBinding {
         fun setNumberOfMinutes(textView: TextView, minutes: Int) {
             textView.text = minutes.toString()
         }
+   */
 
         @BindingAdapter("applyVeganColor")
         @JvmStatic
@@ -76,6 +78,7 @@ class RecipesRowBinding {
                 }
             }
         }
+
         @BindingAdapter("parseHtml")
         @JvmStatic
         fun parseHtml(textView: TextView, description: String?) {

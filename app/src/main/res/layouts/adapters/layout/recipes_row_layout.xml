@@ -39,9 +39,9 @@
 
                 <ImageView
                     android:id="@+id/imgRecipe"
+                    loadImageFromUrl="@{result.image}"
                     android:layout_width="200dp"
                     android:layout_height="0dp"
-                    loadImageFromUrl="@{result.image}"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,12 +68,12 @@
 
                 <TextView
                     android:id="@+id/txtDescription"
+                    parseHtml="@{result.summary}"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    parseHtml="@{result.summary}"
                     android:textColor="@color/descriptionColor"
                     app:layout_constraintEnd_toEndOf="@+id/txtTitle"
                     app:layout_constraintStart_toStartOf="@+id/txtTitle"
@@ -97,8 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:text="100"
-                    setNumberOfLikes="@{result.aggregateLikes}"
+                    android:text="@{String.valueOf(result.aggregateLikes)}"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -120,8 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="100"
-                    setNumberOfMinutes="@{result.readyInMinutes}"
+                    android:text="@{String.valueOf(result.readyInMinutes)}"
                     android:textAlignment="center"
                     android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/txtHeart"
@@ -129,9 +127,9 @@
 
                 <ImageView
                     android:id="@+id/imgLeaf"
+                    applyVeganColor="@{result.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    applyVeganColor="@{result.vegan}"
                     app:layout_constraintBottom_toBottomOf="@+id/imgClock"
                     app:layout_constraintEnd_toEndOf="@+id/txtLeaf"
                     app:layout_constraintStart_toStartOf="@+id/txtLeaf"
@@ -140,11 +138,11 @@
 
                 <TextView
                     android:id="@+id/txtLeaf"
+                    applyVeganColor="@{result.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="Vegan"
-                    applyVeganColor="@{result.vegan}"
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/txtClock"
                     app:layout_constraintTop_toBottomOf="@+id/imgLeaf" />

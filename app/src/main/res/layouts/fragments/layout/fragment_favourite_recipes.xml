@@ -23,7 +23,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvFavoriteRecipes"
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             setData="@{mAdapter}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -38,8 +38,7 @@
             android:id="@+id/imgNoData"
             android:layout_width="100dp"
             android:layout_height="100dp"
-
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:src="@drawable/ic_menu_book"
             android:alpha="0.5"
             android:visibility="invisible"
@@ -47,7 +46,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39" />
+            app:layout_constraintVertical_bias="0.39"
+            app:tint="@color/titleColor" />
 
         <TextView
             android:id="@+id/txtNodata"
@@ -55,9 +55,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:alpha="0.5"
-            viewVisibility="@{mainViewModel.readFavoriteRecipes}"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:text="@string/no_favorite_recipes"
-            android:textColor="@color/black"
+            android:textColor="@color/titleColor"
             android:textSize="18sp"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/imgNoData"

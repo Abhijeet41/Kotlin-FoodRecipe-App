@@ -19,9 +19,7 @@ import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
 import com.abhi41.foodrecipe.utils.NetworkListener
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.observeOnce
-import com.abhi41.foodrecipe.utils.removeObserverEx
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_recipes.view.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -52,7 +50,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         //  mView = inflater.inflate(R.layout.fragment_recipes, container, false)
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
@@ -73,7 +71,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (view != null){
-            lifecycleScope.launch {
+            lifecycleScope.launchWhenStarted { //insted of launch because its crashed when turn on internet connection
                 networkListener = NetworkListener()
                 networkListener.checkNetworkAvailability(requireContext())
                     .collect { status ->
@@ -217,11 +215,13 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     private fun showShimmerEffect() {
-        binding.rvRecipes.showShimmer()
+        binding.rvRecipesShimmer.startShimmer()
+        binding.rvRecipes.visibility = View.GONE
     }
 
     private fun hideShimmerEffect() {
-        binding.rvRecipes.rv_recipes.hideShimmer()
+        binding.rvRecipesShimmer.stopShimmer()
+        binding.rvRecipes.visibility = View.VISIBLE
     }
 
     override fun onDestroy() {

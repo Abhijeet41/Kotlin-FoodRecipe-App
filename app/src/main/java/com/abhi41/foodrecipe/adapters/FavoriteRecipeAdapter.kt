@@ -13,8 +13,6 @@ import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.screens.favorites.FavouriteRecipesFragmentDirections
 import com.abhi41.foodrecipe.utils.PrintMessage
 import com.abhi41.foodrecipe.utils.RecipesDiffUtils
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.favorite_recipe_row.view.*
 
 class FavoriteRecipeAdapter(
     private val requireActivity: FragmentActivity,
@@ -29,7 +27,7 @@ class FavoriteRecipeAdapter(
     private var favoriteRecipes = emptyList<FavoriteEntity>()
 
     class MyViewHolder(
-        private val binding: FavoriteRecipeRowBinding
+        val binding: FavoriteRecipeRowBinding
 
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -54,13 +52,13 @@ class FavoriteRecipeAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         myViewHolders.add(holder)
         rootView = holder.itemView.rootView
-
+        saveItemState(favoriteRecipes[position], holder) //fix scroll bug
         val currentRecipe = favoriteRecipes.get(position)
         holder.bind(currentRecipe)
         /**
          * Single Click Listener
          */
-        holder.itemView.recipesFavRowLayout.setOnClickListener {
+        holder.binding.recipesFavRowLayout.setOnClickListener {
             if (multiSelection) {
                 applySelection(holder, currentRecipe)
             } else {
@@ -75,7 +73,7 @@ class FavoriteRecipeAdapter(
         /**
          * Long Click Listener
          */
-        holder.itemView.recipesFavRowLayout.setOnLongClickListener {
+        holder.binding.recipesFavRowLayout.setOnLongClickListener {
 
             if (!multiSelection) {
                 multiSelection = true
@@ -88,6 +86,17 @@ class FavoriteRecipeAdapter(
             }
 
 
+        }
+    }
+
+    //fix bug
+    /* so if we have 9 items in favorite when we long pressed and
+     select 1st item automatically 8th item also get selected */
+    fun saveItemState(currentRecipe: FavoriteEntity, holder: MyViewHolder) {
+        if (selectedRecipes.contains(currentRecipe)) {
+            changeRecipeStyle(holder, R.color.cardBackgroundLightColor, R.color.selectedStrokeColor)
+        } else {
+            changeRecipeStyle(holder, R.color.cardBackgroundColor, R.color.strokeColor)
         }
     }
 
@@ -109,10 +118,10 @@ class FavoriteRecipeAdapter(
     }
 
     private fun changeRecipeStyle(holder: MyViewHolder, backgroundColor: Int, strokeColor: Int) {
-        holder.itemView.recipesFavRowLayout.setBackgroundColor(
+        holder.binding.recipesFavRowLayout.setBackgroundColor(
             ContextCompat.getColor(requireActivity, backgroundColor)
         )
-        holder.itemView.fav_row_cardview.strokeColor =
+        holder.binding.favRowCardview.strokeColor =
             ContextCompat.getColor(requireActivity, strokeColor)
     }
 
@@ -124,7 +133,7 @@ class FavoriteRecipeAdapter(
             1 -> {
                 mActionMode.title = "${selectedRecipes.size} item selected"
             }
-            else ->{
+            else -> {
                 mActionMode.title = "${selectedRecipes.size} items selected"
             }
         }
@@ -142,7 +151,7 @@ class FavoriteRecipeAdapter(
     }
 
     override fun onActionItemClicked(actionMode: ActionMode?, menu: MenuItem?): Boolean {
-        if (menu?.itemId == R.id.delete_favorite_menu){
+        if (menu?.itemId == R.id.delete_favorite_menu) {
             selectedRecipes.forEach { favoriteEntity ->
                 mainViewModel.deleteFavoriteRecipe(favoriteEntity)
             }
@@ -175,13 +184,13 @@ class FavoriteRecipeAdapter(
         diffUtilResult.dispatchUpdatesTo(this)
     }
 
-    private fun showSnacBar(message: String){
-      //  Snackbar.make(rootView,message,Snackbar.LENGTH_SHORT).setAction("Okay"){}
-        PrintMessage.showSnackBarAction(message,rootView,"Okay")
+    private fun showSnacBar(message: String) {
+        //  Snackbar.make(rootView,message,Snackbar.LENGTH_SHORT).setAction("Okay"){}
+        PrintMessage.showSnackBarAction(message, rootView, "Okay")
     }
 
-    fun clearContextualActionMode(){
-        if(this::mActionMode.isInitialized){
+    fun clearContextualActionMode() {
+        if (this::mActionMode.isInitialized) {
             mActionMode.finish()
         }
     }

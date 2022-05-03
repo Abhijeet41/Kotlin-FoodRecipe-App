@@ -12,15 +12,18 @@ import androidx.navigation.navArgs
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.PagerAdapter
 import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity
+import com.abhi41.foodrecipe.databinding.ActivityDetailsBinding
 import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.PrintMessage
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_details.*
+
 
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
     private val TAG = "DetailsActivity"
+    private lateinit var binding: ActivityDetailsBinding
     private val args by navArgs<DetailsActivityArgs>()
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -29,10 +32,11 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        binding = ActivityDetailsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setSupportActionBar(toolbar)
-        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
@@ -55,11 +59,16 @@ class DetailsActivity : AppCompatActivity() {
         }
 
         //now we have fragments,titles,resultBundle so we can initialize PagerAdapter
+        binding.viewPager2.isUserInputEnabled = false
+        val pagerAdapter = PagerAdapter(resultBundle, fragments, this)
+        binding.viewPager2.apply {
+            adapter = pagerAdapter
+        }
 
-        val adapter = PagerAdapter(resultBundle, fragments, titles, supportFragmentManager)
+        TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.text = titles.get(position)
+        }.attach()
 
-        viewPager.adapter = adapter
-        tabLayout.setupWithViewPager(viewPager)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -113,7 +122,7 @@ class DetailsActivity : AppCompatActivity() {
         changeMenuItemColor(item, R.color.yellow)
         PrintMessage.showSnackBarAction(
             "Recipe Saved",
-            detailsLayout,
+            binding.detailsLayout,
             "Okay"
         )
         recipeSaved = true
@@ -129,7 +138,7 @@ class DetailsActivity : AppCompatActivity() {
         changeMenuItemColor(item, R.color.white)
         PrintMessage.showSnackBarAction(
             "Recipe from Favorite",
-            detailsLayout,
+            binding.detailsLayout,
             "Okay"
         )
         recipeSaved = false

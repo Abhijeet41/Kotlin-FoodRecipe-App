@@ -263,7 +263,7 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnApply"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -272,6 +272,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:text="Apply"
+        android:textSize="18sp"
+        android:background="@color/colorPrimary"
         android:textColor="@color/white"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

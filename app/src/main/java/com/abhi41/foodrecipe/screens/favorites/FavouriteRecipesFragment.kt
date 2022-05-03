@@ -12,7 +12,6 @@ import com.abhi41.foodrecipe.databinding.FragmentFavouriteRecipesBinding
 import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.utils.PrintMessage
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_favourite_recipes.view.*
 
 @AndroidEntryPoint
 class FavouriteRecipesFragment : Fragment() {
@@ -31,7 +30,7 @@ class FavouriteRecipesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         // val view = inflater.inflate(R.layout.fragment_favourite_recipes, container, false)
         _binding = FragmentFavouriteRecipesBinding.inflate(inflater, container, false)
@@ -77,8 +76,8 @@ class FavouriteRecipesFragment : Fragment() {
         )
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
         mAdapter.clearContextualActionMode()
     }

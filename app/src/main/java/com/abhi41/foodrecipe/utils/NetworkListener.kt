@@ -6,28 +6,48 @@ import android.net.Network
 import android.net.NetworkCapabilities
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class NetworkListener: ConnectivityManager.NetworkCallback() {
+class NetworkListener : ConnectivityManager.NetworkCallback() {
     //"Sate flow stay active in an background and it gets removed only when there is no other references to it from garbage
 //collection route"
     private val isNetworkAvailable = MutableStateFlow(false)
 
-    fun checkNetworkAvailability(context: Context): MutableStateFlow<Boolean>{
+    fun checkNetworkAvailability(context: Context): MutableStateFlow<Boolean> {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         connectivityManager.registerDefaultNetworkCallback(this)
 
-        var isConnected = false
+        val network = connectivityManager.activeNetwork
 
-        connectivityManager.allNetworks.forEach { network ->
-            val networkCapability = connectivityManager.getNetworkCapabilities(network)
-            networkCapability?.let {
-                if (it.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)){
-                    isConnected = true
-                    return@forEach
-                }
+        if (network == null) {
+            isNetworkAvailable.value = false
+            return isNetworkAvailable
+        }
+
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(network)
+        if (networkCapabilities == null) {
+            isNetworkAvailable.value = false
+            return isNetworkAvailable
+        }
+
+        when {
+            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+                isNetworkAvailable.value = true
+                return isNetworkAvailable
+            }
+            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+                isNetworkAvailable.value = true
+                return isNetworkAvailable
+            }
+            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+                isNetworkAvailable.value = true
+                return isNetworkAvailable
+            }
+            else -> {
+                isNetworkAvailable.value = false
+                return isNetworkAvailable
             }
         }
-        isNetworkAvailable.value = isConnected
+
         return isNetworkAvailable
     }
 
