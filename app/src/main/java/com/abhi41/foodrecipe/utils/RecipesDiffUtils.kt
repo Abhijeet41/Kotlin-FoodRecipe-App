@@ -1,7 +1,6 @@
 package com.abhi41.foodrecipe.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.abhi41.foodrecipe.model.Result
 
 class RecipesDiffUtils<T>(
     //we replace Result model with generic T

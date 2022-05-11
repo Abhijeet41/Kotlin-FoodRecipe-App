@@ -84,7 +84,7 @@ class RecipesRowBinding {
         fun parseHtml(textView: TextView, description: String?) {
             if (description != null) {
                 val desc = Jsoup.parse(description).text()
-                textView.setText(desc)
+                textView.text = desc
             }
         }
 

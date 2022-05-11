@@ -1,17 +1,15 @@
 package com.abhi41.foodrecipe.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.databinding.IngredientsRowLayoutBinding
 import com.abhi41.foodrecipe.model.ExtendedIngredient
 import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.RecipesDiffUtils
+import java.util.*
 
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
@@ -33,11 +31,15 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }
-        holder.binding.txtIngredient.setText(ingredient.name.capitalize())
-        holder.binding.txtIngredientAmount.setText(ingredient.amount.toString())
-        holder.binding.txtIngredientUnit.setText(ingredient.unit)
-        holder.binding.txtIngredientConsistency.setText(ingredient.consistency)
-        holder.binding.txtIngredientOriginal.setText(ingredient.original)
+        holder.binding.txtIngredient.text = ingredient.name.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.getDefault()
+            ) else it.toString()
+        }
+        holder.binding.txtIngredientAmount.text = ingredient.amount.toString()
+        holder.binding.txtIngredientUnit.text = ingredient.unit
+        holder.binding.txtIngredientConsistency.text = ingredient.consistency
+        holder.binding.txtIngredientOriginal.text = ingredient.original
     }
 
     override fun getItemCount(): Int {

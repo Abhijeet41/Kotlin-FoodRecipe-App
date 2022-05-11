@@ -63,7 +63,7 @@ class FoodJokeFragment : Fragment() {
         mainviewModel.foodJokeResponse.observe(requireParentFragment().viewLifecycleOwner) { response ->
             when (response) {
                 is NetworkResult.Success -> {
-                    binding.txtFoodJoke.setText(response.data?.text)
+                    binding.txtFoodJoke.text = response.data?.text
                     if (response.data != null) {
                         foodJoke = response.data.text!!
                     }

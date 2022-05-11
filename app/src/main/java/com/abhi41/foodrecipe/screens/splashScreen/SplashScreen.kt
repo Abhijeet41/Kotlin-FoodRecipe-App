@@ -11,7 +11,7 @@ import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.screens.MainActivity
 
 class SplashScreen : AppCompatActivity() {
-    var handler = Handler(Looper.myLooper()!!)
+    private var handler = Handler(Looper.myLooper()!!)
 
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +30,6 @@ class SplashScreen : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         handler.removeCallbacksAndMessages(null)
-        this.finishAffinity();
+        this.finishAffinity()
     }
 }

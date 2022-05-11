@@ -7,7 +7,6 @@
     android:padding="4dp">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardIngredients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
@@ -20,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ingredientBg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/cardBackgroundColor"
@@ -37,7 +35,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imgIngredient"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
@@ -73,7 +70,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtIngredient" />
 
             <TextView
-                android:id="@+id/txtIngredientUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -94,7 +90,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtIngredientAmount" />
 
             <TextView
-                android:id="@+id/txtIngredientOriginal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"

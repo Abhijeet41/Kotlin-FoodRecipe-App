@@ -65,7 +65,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         clickListeners()
 
 
-        return binding.root;
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -75,7 +75,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                 networkListener = NetworkListener()
                 networkListener.checkNetworkAvailability(requireContext())
                     .collect { status ->
-                        Log.d(TAG, "networkListener: ${status.toString()}")
+                        Log.d(TAG, "networkListener: $status")
                         recipeViewModel.networkStatus = status
                         recipeViewModel.showNetworkStatus()
 
@@ -199,7 +199,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
 
-    fun loadDataFromCache() {
+    private fun loadDataFromCache() {
         //our mainViewModel.readRecipes is not a suspend fun hence we need to run at background thread
         lifecycleScope.launch {
             mainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->

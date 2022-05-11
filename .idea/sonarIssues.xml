@@ -428,11 +428,6 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <value>
             <set />
@@ -493,52 +488,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/adapters/IngredientsAdapter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/adapters/PagerAdapter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/adapters/RecipesAdapter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/bindingAdapters/FavoriteRecipeBinding.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/bindingAdapters/FoodJokeBinding.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/bindingAdapters/RecipesBinding.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/bindingAdapters/RecipesRowBinding.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/DataStoreRepository.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/Repository.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/LocalDataSource.kt">
           <value>
             <set />
           </value>
@@ -563,47 +513,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/entities/FavoriteEntity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/entities/FoodJokeEntity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/entities/RecipesEntity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/network/FoodRecipesApi.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/typeConverters/RecipesTypeConverter.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/network/RemoteDataSource.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/di/DatabaseModule.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/di/NetworkModule.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/model/ExtendedIngredient.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/model/Result.kt">
           <value>
             <set />
           </value>
@@ -628,47 +543,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/MainActivity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/MainViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/RecipesFragment.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/detailScreen/DetailsActivity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/detailScreen/IngredientsFragment.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/detailScreen/InstructionsFragment.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/detailScreen/OverViewFragment.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/favorites/FavouriteRecipesFragment.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/foodjoke/FoodJokeFragment.kt">
           <value>
             <set />
           </value>
@@ -683,77 +563,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/recipies/bottomsheet/RecipeBottomSheet.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/recipies/bottomsheet/RecipesBottomSheet.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/screens/splashScreen/SplashScreen.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/Constants.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/MyApplication.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/MyExtensionFunctions.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/NetworkListener.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/NetworkResult.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/PrintMessage.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/utils/RecipesDiffUtils.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/color/chip_bg_color.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/color/chip_text_color.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_error_placeholder.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_share_24.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_star.xml">
           <value>
             <set />
           </value>
@@ -788,21 +603,6 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/color/bottom_nav_view_color.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/drawable/edittext_bottom_line.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/drawable/gradient_overlay.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/drawable/ic_splash_screen_light.xml">
           <value>
             <set />
@@ -813,62 +613,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/activity_details.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/activity_splash_screen.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/favorite_recipe_row.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/fragment_ingredients.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/fragment_instructions.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/fragment_over_view.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/layout/ingredients_row_layout.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/menu/details_menu.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/menu/favorite_contextual_menu.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/menu/favorite_recipes_menu.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/menu/food_joke_menu.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/values-night/colors.xml">
           <value>
             <set />
           </value>
@@ -883,12 +628,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/adapters/layout/placeholder_row_layout.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/adapters/layout/recipes_row_layout.xml">
+        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/activities/xml/data_extraction_rules.xml">
           <value>
             <set />
           </value>
@@ -898,82 +638,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_favourite_recipes.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_food_joke.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_over_view.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_recipe_bottom_sheet.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_recipes.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/xml/fragment_over_view_scene.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/layout-night/fragment_food_joke.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/menu/recipes_menu.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/navigation/my_nav.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values/themes.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/gradle.properties">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/settings.gradle">
           <value>
             <set />
           </value>

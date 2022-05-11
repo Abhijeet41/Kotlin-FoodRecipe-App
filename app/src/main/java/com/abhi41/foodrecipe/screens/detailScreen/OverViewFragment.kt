@@ -1,21 +1,19 @@
 package com.abhi41.foodrecipe.screens.detailScreen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import coil.load
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.bindingAdapters.RecipesRowBinding
 import com.abhi41.foodrecipe.databinding.FragmentOverViewBinding
-import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
 import com.abhi41.foodrecipe.model.Result
 import com.abhi41.foodrecipe.utils.Constants
-import org.jsoup.Jsoup
 
 
 class OverViewFragment : Fragment() {
@@ -32,7 +30,7 @@ class OverViewFragment : Fragment() {
         val myBundle: Result? = args?.getParcelable(Constants.RECIPE_RESULT_KEY)
 
         binding.imgMain.load(myBundle?.image)
-        binding.txtTitle.setText(myBundle?.title)//we can also write view.txtTitle.text = myBundle?.title
+        binding.txtTitle.text = myBundle?.title//we can also write view.txtTitle.text = myBundle?.title
         binding.txtLikes.text = myBundle?.aggregateLikes.toString()
         binding.txtTime.text = myBundle?.readyInMinutes.toString()
         // view.txtSummery.text = myBundle?.summary   to fix html tags

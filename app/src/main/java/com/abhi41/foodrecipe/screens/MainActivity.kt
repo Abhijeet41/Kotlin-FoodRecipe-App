@@ -1,7 +1,7 @@
 package com.abhi41.foodrecipe.screens
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -9,7 +9,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.databinding.ActivityMainBinding
-import com.abhi41.foodrecipe.databinding.FragmentIngredientsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

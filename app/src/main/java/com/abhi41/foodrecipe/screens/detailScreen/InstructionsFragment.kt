@@ -1,14 +1,11 @@
 package com.abhi41.foodrecipe.screens.detailScreen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import com.abhi41.foodrecipe.R
-import com.abhi41.foodrecipe.databinding.ActivityMainBinding
-import com.abhi41.foodrecipe.databinding.FragmentIngredientsBinding
+import androidx.fragment.app.Fragment
 import com.abhi41.foodrecipe.databinding.FragmentInstructionsBinding
 import com.abhi41.foodrecipe.model.Result
 import com.abhi41.foodrecipe.utils.Constants

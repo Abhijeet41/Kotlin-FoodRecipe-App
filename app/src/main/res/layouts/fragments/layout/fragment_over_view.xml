@@ -19,7 +19,6 @@
         tools:src="@tools:sample/avatars" />
 
     <View
-        android:id="@+id/gradientOverylay"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:background="@drawable/gradient_overlay"
@@ -125,7 +124,6 @@
         app:tint="@color/itemCheckColor" />
 
     <TextView
-        android:id="@+id/txtVegan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -190,7 +188,6 @@
         app:tint="@color/itemCheckColor" />
 
     <TextView
-        android:id="@+id/txtHealthy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -212,7 +209,6 @@
         app:tint="@color/itemCheckColor" />
 
     <TextView
-        android:id="@+id/txtCheap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -223,7 +219,6 @@
         app:layout_constraintTop_toTopOf="@+id/imgCheap" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="12dp"
@@ -241,7 +236,6 @@
 
 
             <TextView
-                android:id="@+id/txtSummery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"

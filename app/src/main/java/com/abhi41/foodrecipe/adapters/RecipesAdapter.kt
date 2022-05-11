@@ -49,7 +49,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         recipes = newData.results
         diffUtilResult.dispatchUpdatesTo(this)
-        Log.d(TAG, "setData: ${recipes.toString()}")
+        Log.d(TAG, "setData: $recipes")
         // notifyDataSetChanged() we don't need this
     }
 

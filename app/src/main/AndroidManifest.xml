@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodRecipe"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:dataExtractionRules="@xml/data_extraction_rules">
         <activity
             android:name=".screens.splashScreen.SplashScreen"
             android:exported="true"

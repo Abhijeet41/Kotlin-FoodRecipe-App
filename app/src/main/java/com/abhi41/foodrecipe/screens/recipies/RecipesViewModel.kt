@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.abhi41.foodrecipe.data.DataStoreRepository
-import com.abhi41.foodrecipe.data.MealAndDietType
 import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_DIET_TYPE
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_MEAL_TYPE
@@ -40,7 +39,7 @@ class RecipesViewModel @Inject constructor(
         }
 
     //save back online status dataStore preferences
-    fun saveBackOnline(backOnline: Boolean) {
+    private fun saveBackOnline(backOnline: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             dataStoreRepository.saveBackOnline(backOnline)
         }

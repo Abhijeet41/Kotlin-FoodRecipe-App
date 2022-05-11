@@ -92,7 +92,7 @@ class FavoriteRecipeAdapter(
     //fix bug
     /* so if we have 9 items in favorite when we long pressed and
      select 1st item automatically 8th item also get selected */
-    fun saveItemState(currentRecipe: FavoriteEntity, holder: MyViewHolder) {
+    private fun saveItemState(currentRecipe: FavoriteEntity, holder: MyViewHolder) {
         if (selectedRecipes.contains(currentRecipe)) {
             changeRecipeStyle(holder, R.color.cardBackgroundLightColor, R.color.selectedStrokeColor)
         } else {

@@ -2,8 +2,8 @@ package com.abhi41.foodrecipe.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.*
 import androidx.datastore.preferences.core.*
+import androidx.datastore.preferences.preferencesDataStore
 import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_DIET_TYPE
 import com.abhi41.foodrecipe.utils.Constants.Companion.DEFAULT_MEAL_TYPE
@@ -13,12 +13,10 @@ import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCE_BACK_ONLINE
 import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCE_DIET_TYPE_ID
 import com.abhi41.foodrecipe.utils.Constants.Companion.PREFERENCE_MEAL_TYPE_ID
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityRetainedScoped
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
-
 import java.io.IOException
 import javax.inject.Inject
 
@@ -46,7 +44,7 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
     }
 
     //create data source
-    val dataStore: DataStore<Preferences> = context.dataStore
+    private val dataStore: DataStore<Preferences> = context.dataStore
 
     //save data in datastore preferences
     suspend fun saveMealAndDietType(
