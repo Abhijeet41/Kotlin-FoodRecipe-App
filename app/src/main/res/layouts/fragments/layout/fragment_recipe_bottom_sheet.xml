@@ -38,6 +38,7 @@
 
 
             <com.google.android.material.chip.ChipGroup
+                android:id="@+id/mealTypeChipGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:checkedChip="@+id/main_course_chip"
@@ -170,6 +171,7 @@
 
 
             <com.google.android.material.chip.ChipGroup
+                android:id="@+id/dietTypeChipGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:checkedChip="@+id/gluten_free_chip"
@@ -241,6 +243,7 @@
     </HorizontalScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnApply"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"

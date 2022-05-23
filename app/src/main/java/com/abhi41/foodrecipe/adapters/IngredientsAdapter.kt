@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.databinding.IngredientsRowLayoutBinding
 import com.abhi41.foodrecipe.model.ExtendedIngredient
@@ -37,7 +38,7 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
             ) else it.toString()
         }
         holder.binding.txtIngredientAmount.text = ingredient.amount.toString()
-        holder.binding.txtIngredientUnit.text = ingredient.unit
+       // holder.binding.txtIngredientUnit.text = ingredient.unit
         holder.binding.txtIngredientConsistency.text = ingredient.consistency
         holder.binding.txtIngredientOriginal.text = ingredient.original
     }

@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import androidx.lifecycle.*
 import com.abhi41.foodrecipe.data.database.entities.RecipesEntity
 import com.abhi41.foodrecipe.data.Repository
+import com.abhi41.foodrecipe.data.UseCase.UseCases
 import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity
 import com.abhi41.foodrecipe.data.database.entities.FoodJokeEntity
 import com.abhi41.foodrecipe.model.FoodJoke
@@ -26,12 +27,15 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val repository: Repository,
     application: Application,
+    useCases: UseCases
 ) : AndroidViewModel(application) {
 
     /**  ROOM DATABASE */
 
     //we get data from flow so convert it in live data we used .asLiveData()
-    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
+ //   val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
+    val readRecipes = useCases.getAllRecipesUse().asLiveData()
+
     val readFavoriteRecipes: LiveData<List<FavoriteEntity>> =
         repository.local.readFavoriteRecipes().asLiveData()
 
