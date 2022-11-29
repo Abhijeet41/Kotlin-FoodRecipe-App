@@ -10,8 +10,7 @@ import com.abhi41.foodrecipe.utils.Constants
 class FoodJokeEntity(
     @Embedded  //with this annotation we can inspect food joke model class
     var foodJoke: FoodJoke
-    ) {
+) {
     @PrimaryKey(autoGenerate = false)
     var id: Int = 0
-
 }

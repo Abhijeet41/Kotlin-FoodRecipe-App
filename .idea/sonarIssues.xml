@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../GoodConnect/platforms/android/app/google-services.json">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../GoodConnect/platforms/android/app/src/main/AndroidManifest.xml">
           <value>
             <set />
@@ -533,6 +538,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/entities/FoodJokeEntity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/foodrecipe/data/database/typeConverters/RecipesTypeConverter.kt">
           <value>
             <set />
@@ -693,6 +703,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_food_joke.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_over_view.xml">
           <value>
             <set />
@@ -703,7 +718,302 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layouts/fragments/layout/fragment_recipes.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/build/tmp/kapt3/stubs/debug/com/abhi41/foodrecipe/model/Result.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/build/tmp/kapt3/stubs/debug/com/abhi41/jetfoodrecipeapp/data/local/dao/RecipesDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/build/tmp/kapt3/stubs/debug/com/abhi41/jetfoodrecipeapp/data/local/database/RecipesDatabase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/build/tmp/kapt3/stubs/debug/com/abhi41/jetfoodrecipeapp/data/local/entities/FavoriteEntity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/build/tmp/kapt3/stubs/debug/com/abhi41/jetfoodrecipeapp/presentation/screens/dashboardScreen/DashBoardViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/LocalDataSource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/dao/RecipesDao.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/database/RecipesDatabase.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/entities/FavoriteEntity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/entities/FoodJokeEntity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/entities/RecipesEntity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/local/typeConverters/RecipesTypeConverter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/network/RemoteDataSource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/data/repository/MealDataStoreRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/model/ExtendedIngredient.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/model/FavoriteEntity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/model/Result.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/navigation/BottomNavGraph.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/navigation/NavGraph.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/navigation/RootNavGraph.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/navigation/Screen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/common/HandleResponse.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/common/ListContent.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/common/RecipesListContent.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/common/chip/Chip.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/common/chip/ChipGroup.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/common/chip/MealType.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/dashboardScreen/DashBoardScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/dashboardScreen/DashBoardViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/detailScreen/DetailScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/detailScreen/DetailScreenAppbar.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/detailScreen/DetailViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/detailScreen/tabs/IngredientScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/detailScreen/tabs/OverViewScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/favoriteScreen/FavoriteScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/favoriteScreen/FavoriteScreenAppbar.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/favoriteScreen/FavoriteViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/foodJoke/FoodJokeScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/foodJoke/FoodJokeViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/recipesScreen/MealType.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/recipesScreen/RecipesListScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/recipesScreen/RecipesTopBar.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/recipesScreen/RecipesViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/searchScreen/SearchScreen.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/searchScreen/SearchTopBar.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/presentation/screens/searchScreen/SearchViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/ui/theme/Color.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/ui/theme/Dimens.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/ui/theme/Theme.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/ui/theme/Type.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/utils/Constants.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/java/com/abhi41/jetfoodrecipeapp/utils/NetworkResult.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/res/drawable-xxhdpi/ic_food_joke.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/res/drawable-xxhdpi/ic_restaurant_24.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/res/drawable/ic_transperent.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Kotlin App Development 2022/JetFoodRecipe/app/src/main/res/values/colors.xml">
           <value>
             <set />
           </value>

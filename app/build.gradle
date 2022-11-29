@@ -120,6 +120,22 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation "android.arch.core:core-testing:1.1.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //mockito dependency
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
+
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.0'
+
+    //test coroutine dependecy
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+    testImplementation("com.google.dagger:hilt-android-testing:2.44")
+    // ...with Kotlin.
+    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
+    // ...with Java.
+    testAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
 }
