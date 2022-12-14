@@ -71,7 +71,7 @@ class RecipeBottomSheet : BottomSheetDialogFragment() {
                 dietTypeChipId
             )
             val action =
-                RecipeBottomSheetDirections.actionRecipesBottomSheet2ToRecipesFragment(true)
+                RecipeBottomSheetDirections.actionRecipesBottomSheet2ToRecipesFragment()
             findNavController().navigate(action)
 
         }

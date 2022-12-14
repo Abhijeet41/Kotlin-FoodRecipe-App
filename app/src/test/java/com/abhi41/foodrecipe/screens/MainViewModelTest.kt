@@ -4,7 +4,9 @@ import android.app.Application
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.viewModelScope
+import androidx.test.platform.app.InstrumentationRegistry
 import com.abhi41.foodrecipe.data.Repository
+import com.abhi41.foodrecipe.data.UseCase.GetAllRecipesUseCase
 import com.abhi41.foodrecipe.data.UseCase.UseCases
 import com.abhi41.foodrecipe.data.database.entities.RecipesEntity
 import com.abhi41.foodrecipe.data.network.RemoteDataSource
@@ -60,12 +62,13 @@ class MainViewModelTest {
     fun setUp() {
         MockitoAnnotations.openMocks(this)
         Dispatchers.setMain(testDispatcher)
+        context = Mockito.mock(Application::class.java)
     }
 
     @Test
     fun test_getRecipes () {
        return runTest {
-            Mockito.`when`(repository.remote.getRecepies(applyQueries())).thenReturn(
+            Mockito.`when`(remoteDataSource.getRecepies(applyQueries())).thenReturn(
                 Response.success(FoodRecipe(emptyList()))
             )
            val sut = MainViewModel(repository,context,useCases)

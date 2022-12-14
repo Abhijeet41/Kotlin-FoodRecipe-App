@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.RecipesAdapter
@@ -82,6 +83,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                         readDataBase() //now retrieve data from database instead from network
                     }
             }
+           
         }
 
     }

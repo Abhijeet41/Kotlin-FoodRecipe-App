@@ -5,11 +5,11 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
-import com.abhi41.foodrecipe.data.database.entities.RecipesEntity
 import com.abhi41.foodrecipe.data.Repository
 import com.abhi41.foodrecipe.data.UseCase.UseCases
 import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity
 import com.abhi41.foodrecipe.data.database.entities.FoodJokeEntity
+import com.abhi41.foodrecipe.data.database.entities.RecipesEntity
 import com.abhi41.foodrecipe.model.FoodJoke
 import com.abhi41.foodrecipe.model.FoodRecipe
 import com.abhi41.foodrecipe.utils.CheckConnection
@@ -18,7 +18,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import java.lang.Exception
 import javax.inject.Inject
 
 //because of @ViewModelInject we don't need to create viewmodel factory
@@ -33,8 +32,8 @@ class MainViewModel @Inject constructor(
     /**  ROOM DATABASE */
 
     //we get data from flow so convert it in live data we used .asLiveData()
- //   val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
-    val readRecipes = useCases.getAllRecipesUse().asLiveData()
+    //   val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
+    val readRecipes: LiveData<List<RecipesEntity>> = useCases.getAllRecipesUse().asLiveData()
 
     val readFavoriteRecipes: LiveData<List<FavoriteEntity>> =
         repository.local.readFavoriteRecipes().asLiveData()
@@ -64,8 +63,8 @@ class MainViewModel @Inject constructor(
 
     /* --------------- functions for add Food Joke ------------- */
 
-    private fun insertFoodJoke (foodJokeEntity: FoodJokeEntity) =
-        viewModelScope.launch (Dispatchers.IO){
+    private fun insertFoodJoke(foodJokeEntity: FoodJokeEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertFoodJoke(foodJokeEntity)
         }
 
@@ -145,7 +144,7 @@ class MainViewModel @Inject constructor(
             } catch (e: Exception) {
                 foodJokeResponse.value = NetworkResult.Error("No joke found")
             }
-        }else{
+        } else {
             foodJokeResponse.value = NetworkResult.Error("No Internet Connection")
         }
 
@@ -199,6 +198,7 @@ class MainViewModel @Inject constructor(
         val foodJokeEntity = FoodJokeEntity(foodJoke)
         insertFoodJoke(foodJokeEntity)
     }
+
     // we don't need this any more because we created seperate class CheckConnection
     private fun hasInternetConnection(): Boolean {
         val connectivityManager = getApplication<Application>()
