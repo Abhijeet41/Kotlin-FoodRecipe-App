@@ -11,6 +11,12 @@ class Constants {
 
         const val RECIPE_RESULT_KEY = "recipeBundle"
 
+        // channel id push notification
+        const val CHANNEL_ID = "RECIPES_PUSH_NOTIFICATION"
+        const val CHANNEL_NAME = "RECIPES_CHANNEL"
+
+        const val FCM_NOTIFICATION_ID = 1
+
         //API Queries Keys
         const val QUERY_SEARCH = "query"
         const val QUERY_NUMBER = "50"

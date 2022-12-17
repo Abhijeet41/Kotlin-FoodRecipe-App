@@ -3,9 +3,9 @@ package com.abhi41.foodrecipe.screens.recipies
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -13,16 +13,18 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.RecipesAdapter
 import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
+import com.abhi41.foodrecipe.screens.MainViewModel
 import com.abhi41.foodrecipe.utils.NetworkListener
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.observeOnce
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 @AndroidEntryPoint
@@ -32,7 +34,8 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
-   // private lateinit var mainViewModel: MainViewModel
+
+    // private lateinit var mainViewModel: MainViewModel
     private val mainViewModel by viewModels<MainViewModel>()
     private lateinit var recipeViewModel: RecipesViewModel
 
@@ -71,7 +74,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (view != null){
+        if (view != null) {
             lifecycleScope.launchWhenStarted { //insted of launch because its crashed when turn on internet connection
                 networkListener = NetworkListener()
                 networkListener.checkNetworkAvailability(requireContext())
@@ -83,7 +86,28 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                         readDataBase() //now retrieve data from database instead from network
                     }
             }
-           
+            val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+            val state = arrayOf<Int>(1)
+            binding.rvRecipes.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    state[0] = newState
+                }
+
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    //dy>0 then user scrolling downward other wise upword
+                    if (dy > 0 && (state[0] == 0 || state[0] == 2)) { // hide the toolbar
+                        navBar?.animate()?.translationY(20f)?.start()
+                        navBar?.visibility = View.GONE
+                    } else if (dy < -5) {
+                        navBar?.animate()?.translationY(0f)
+                        navBar?.visibility = View.VISIBLE
+
+                    }
+                }
+            })
         }
 
     }
@@ -120,7 +144,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     private fun readDataBase() {
         /* Our mainViewModel.readRecipes is not a suspend fun hence we need to run at background thread
         that why we use lifecycleScope */
-        if (binding.root != null){
+        if (binding.root != null) {
             lifecycleScope.launch {
                 //IMP : we replace observe with observeOnce because  we need to observe this once only
                 mainViewModel.readRecipes.observeOnce(requireParentFragment().viewLifecycleOwner) { database ->
@@ -243,7 +267,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        if (query != null){
+        if (query != null) {
             searchApiData(query)
         }
         return true

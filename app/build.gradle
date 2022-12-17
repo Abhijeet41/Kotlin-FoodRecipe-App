@@ -7,6 +7,7 @@ plugins {
     //id 'androidx.navigation.safeargs.kotlin' not working on latest dagger hilt
     id("androidx.navigation.safeargs")
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -28,6 +29,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug  {
+            debuggable true
         }
     }
     buildFeatures {
@@ -119,6 +123,11 @@ dependencies {
 
     // Jsoup use to parse html tags to web browsers
     implementation 'org.jsoup:jsoup:1.13.1'
+
+    //firebase plugins
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
