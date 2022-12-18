@@ -9,8 +9,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.screens.MainActivity
+import com.abhi41.foodrecipe.utils.BaseActivity
 
-class SplashScreen : AppCompatActivity() {
+class SplashScreen : BaseActivity() {
     private var handler = Handler(Looper.myLooper()!!)
 
     @RequiresApi(Build.VERSION_CODES.P)

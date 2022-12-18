@@ -17,6 +17,7 @@ import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.RecipesAdapter
 import com.abhi41.foodrecipe.databinding.FragmentRecipesBinding
 import com.abhi41.foodrecipe.screens.MainViewModel
+import com.abhi41.foodrecipe.utils.BaseFragment
 import com.abhi41.foodrecipe.utils.NetworkListener
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.observeOnce
@@ -28,7 +29,7 @@ import kotlinx.coroutines.runBlocking
 
 
 @AndroidEntryPoint
-class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
+class RecipesFragment : BaseFragment(), SearchView.OnQueryTextListener {
     private val TAG = "RecipesFragment"
     private val args by navArgs<RecipesFragmentArgs>()
 

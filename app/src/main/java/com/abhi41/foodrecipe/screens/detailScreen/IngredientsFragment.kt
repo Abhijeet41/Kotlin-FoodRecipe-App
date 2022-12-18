@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhi41.foodrecipe.adapters.IngredientsAdapter
 import com.abhi41.foodrecipe.databinding.FragmentIngredientsBinding
 import com.abhi41.foodrecipe.model.Result
+import com.abhi41.foodrecipe.utils.BaseFragment
 import com.abhi41.foodrecipe.utils.Constants
 
 
-class IngredientsFragment : Fragment() {
+class IngredientsFragment : BaseFragment() {
     private var _binding: FragmentIngredientsBinding? = null
     private val binding get() = _binding!!
     private val mAdapter: IngredientsAdapter by lazy { IngredientsAdapter() }

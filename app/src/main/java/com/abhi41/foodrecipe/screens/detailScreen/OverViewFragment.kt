@@ -13,10 +13,11 @@ import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.bindingAdapters.RecipesRowBinding
 import com.abhi41.foodrecipe.databinding.FragmentOverViewBinding
 import com.abhi41.foodrecipe.model.Result
+import com.abhi41.foodrecipe.utils.BaseFragment
 import com.abhi41.foodrecipe.utils.Constants
 
 
-class OverViewFragment : Fragment() {
+class OverViewFragment : BaseFragment() {
     private var _binding: FragmentOverViewBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(

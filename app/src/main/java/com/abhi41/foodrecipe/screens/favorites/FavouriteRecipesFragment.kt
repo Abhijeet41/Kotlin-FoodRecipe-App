@@ -10,11 +10,12 @@ import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.adapters.FavoriteRecipeAdapter
 import com.abhi41.foodrecipe.databinding.FragmentFavouriteRecipesBinding
 import com.abhi41.foodrecipe.screens.MainViewModel
+import com.abhi41.foodrecipe.utils.BaseFragment
 import com.abhi41.foodrecipe.utils.PrintMessage
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FavouriteRecipesFragment : Fragment() {
+class FavouriteRecipesFragment : BaseFragment() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private val mAdapter: FavoriteRecipeAdapter by lazy {

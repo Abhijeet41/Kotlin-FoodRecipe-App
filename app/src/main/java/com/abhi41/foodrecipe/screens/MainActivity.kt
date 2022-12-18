@@ -10,12 +10,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.databinding.ActivityMainBinding
+import com.abhi41.foodrecipe.utils.BaseActivity
 import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 
 
+@Suppress("UNREACHABLE_CODE")
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private val TAG = "MainActivity"
     lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController

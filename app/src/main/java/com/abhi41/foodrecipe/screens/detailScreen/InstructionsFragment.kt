@@ -8,10 +8,11 @@ import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.abhi41.foodrecipe.databinding.FragmentInstructionsBinding
 import com.abhi41.foodrecipe.model.Result
+import com.abhi41.foodrecipe.utils.BaseFragment
 import com.abhi41.foodrecipe.utils.Constants
 
 
-class InstructionsFragment : Fragment() {
+class InstructionsFragment : BaseFragment() {
     private var _binding: FragmentInstructionsBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(

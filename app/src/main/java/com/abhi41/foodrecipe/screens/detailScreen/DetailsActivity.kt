@@ -1,11 +1,11 @@
 package com.abhi41.foodrecipe.screens.detailScreen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -15,15 +15,17 @@ import com.abhi41.foodrecipe.adapters.PagerAdapter
 import com.abhi41.foodrecipe.data.database.entities.FavoriteEntity
 import com.abhi41.foodrecipe.databinding.ActivityDetailsBinding
 import com.abhi41.foodrecipe.screens.MainViewModel
+import com.abhi41.foodrecipe.utils.BaseActivity
 import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.PrintMessage
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
-class DetailsActivity : AppCompatActivity() {
+class DetailsActivity : BaseActivity() {
     private val TAG = "DetailsActivity"
     private lateinit var binding: ActivityDetailsBinding
     private val args by navArgs<DetailsActivityArgs>()
@@ -41,6 +43,7 @@ class DetailsActivity : AppCompatActivity() {
         binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+       // throw  RuntimeException("Test Crash");
 
         val fragments = ArrayList<Fragment>()
         fragments.add(OverViewFragment())

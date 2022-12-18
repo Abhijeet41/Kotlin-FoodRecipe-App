@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.abhi41.foodrecipe.R
 import com.abhi41.foodrecipe.databinding.FragmentFoodJokeBinding
 import com.abhi41.foodrecipe.screens.MainViewModel
+import com.abhi41.foodrecipe.utils.BaseFragment
 import com.abhi41.foodrecipe.utils.Constants
 import com.abhi41.foodrecipe.utils.NetworkResult
 import com.abhi41.foodrecipe.utils.PrintMessage
@@ -16,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class FoodJokeFragment : Fragment() {
+class FoodJokeFragment : BaseFragment() {
     private val TAG = "FoodJokeFragment"
 
     //there is two way to intialize viewmodel by dagger hilt and viewmodel provider
